@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>Home</title>
+	<link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="modal.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="background">
+            <div class="cube"></div>
+            <div class="cube"></div>
+            <div class="cube"></div>
+            <div class="cube"></div>
+           <div class="cube"></div>
+         </div>
+		<header>
+		<nav>
+            <ul>
+                 <li><a href="index.html">Home</a></li>
+                 <li><a href="about.html">About</a></li>
+                 <li><a href="portfolio.html">Portfolio</a></li>
+                 <li><a href="contacts.html">Contacts</a></li>
+            </ul>
+        </nav>
+        <div class="g-container">
+            <ul style="--s: 2">
+              <li>YL</li>
+              <li>QA</li>
+              <li>YL</li>
+            </ul>
+          </div>
+		<section class="header-content">
+                <div class="fig">
+                    <img src="image/av.png" width="280" height="280" alt="Иллюстрация">
+                </div>
+                <h1>About me</h1>
+                <p>
+                    So far, all that is known about me is that I drink a lot of coffee.<br>
+                    Really a lot of coffee!
+                </p>
+            <button onclick="document.location='portfolio.html'">Portfolio</button>           
+            <button onclick="document.location='contacts.html'">Contacts</button>
+            <script src="modal.js"></script>
+            <script>
+            (function () {
+            var modal = $modal();
+            document.querySelector('#show-modal').addEventListener('click', function () 
+            {
+                modal.show();
+            });
+            })();
+            </script>
+            <button class="btn" data-toggle="modal-1">Skills</button>
+            <button class="btn" data-toggle="modal-2">Purpose</button> 
+            <script>
+            // модальное окно 1
+            var modal1 = $modal({
+                title: 'Skills',
+                content: 'Programs <br> Soft skills'
+            });
+            // модальное окно 2
+            var modal2 = $modal({
+                title: 'Purpose',
+                content: 'I can make your life easier, give you confidence in your product and make it more high quality.'
+            });
+            // при клике по кнопке #show-modal-1
+            document.addEventListener('click', function (e) {
+                if (e.target.dataset.toggle === 'modal-1') {
+                    // отобразим модальное окно N1
+                    modal1.show();
+                } else if (e.target.dataset.toggle === 'modal-2') {
+                    // отобразим модальное окно N2
+                    modal2.show();
+                }
+                });
+                </script>
+        </section>
+    </header>
+</body>
+</html>
